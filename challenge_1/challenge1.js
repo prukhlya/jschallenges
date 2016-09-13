@@ -15,6 +15,8 @@ var loadButton = $('#load-button');
  * @return {String}
  */
 function getText() {
+
+
   return $('#save-me').val();
 }
 
@@ -23,5 +25,21 @@ function getText() {
  * @param {String} text the stuff you want to put in the box
  */
 function setText(text) {
+
+	
+	
   return $('#save-me').val(text);
 }
+
+
+saveButton.on('click', function() {
+	localStorage.setItem('userInput', getText());
+})
+
+loadButton.on('click', function() {
+	setText(localStorage.getItem('userInput'));
+})
+
+
+
+
