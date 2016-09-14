@@ -30,6 +30,96 @@
 
  $(function(){
 
+	
+    //var teamTwoShoot = $("#teamtwo-shoot");
+    //var teamOneShotsTaken = $("#teamone-numshots");
+    //var teamTwoShotsTaken = $("#teamtwo-numshots");
+    //var teamOneGoals = $("#teamone-numhits");
+    //var teamTwoGoals = $("#teamtwo-numhits");
+
+	
+    var shot2 = 0;
+	var shot1 = 0;
+	var goals1 = 0;
+	var goals2 = 0;
+	var numResets = 0;
+	var baseURL = "http://66.90.94.162/ost/blades-of-steel-nintendo-/znhlvuyhgx/game-end.mp3";
+$("html").css("background-color", "#0059b3");
+$("div").css("background-color", "#99ccff");
+
+$("#teamone-shoot").click(function() {
+
+	var audio = document.getElementById("team1sound");
+     	audio.play();
+	
+	jumbler = Math.floor((Math.random() * 8) + 1);
+
+	if (jumbler == 6) {
+		$("html").css("background-color", "blue");
+		$("div").css("background-color", "red");
+		goals1++;
+		$("#teamone-numhits").html(goals1);
+		shot1++;
+		$("#teamone-numshots").html(shot1);
+		
+	} else {
+		shot1++;
+		$("#teamone-numshots").html(shot1);
+		
+	}
+
+  
+
+});
+
+
+$("#teamtwo-shoot").click(function() {
+	
+	jumbler = Math.floor((Math.random() * 8) + 1);
+
+	if (jumbler == 6) {
+		$("html").css("background-color", "black");
+		$("div").css("background-color", "yellow");
+		goals2++;
+		$("#teamtwo-numhits").html(goals2);
+		shot2++;
+		$("#teamtwo-numshots").html(shot2);
+		
+	} else {
+		shot2++;
+		$("#teamtwo-numshots").html(shot2);
+		
+	}
+  
+
+});	
+
+$("#reset").click(function() {
+
+	numResets++;
+	$("#num-resets").html(numResets); {
+ 	shot2 = 0;
+	shot1 = 0;
+	goals1 = 0;
+	goals2 = 0;
+			
+		$("html").css("background-color", "#0059b3");
+		$("div").css("background-color", "#99ccff");
+        $("#teamone-numhits").html(goals1);
+        $("#teamone-numshots").html(shot1);
+        $("#teamtwo-numhits").html(goals2);
+        $("#teamtwo-numshots").html(shot2);
+         
+
+	}
+
+
+	var audio = document.getElementById("mysoundclip");
+     	audio.play();
+     
+	
+
+});
 
 
  })
